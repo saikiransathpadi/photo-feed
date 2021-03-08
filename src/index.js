@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Imagefeed from './imagefeed'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    
+      <body>
+    <h1 className='head'>Photo Book</h1>
+   <Imagefeed/>
+   </body>
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

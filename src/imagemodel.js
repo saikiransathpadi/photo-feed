@@ -1,6 +1,5 @@
-import "./imagemodel.css";
+// import "./imagemodel.css";
 
-// import { checkPropTypes } from "prop-types";
 
 export default function Imagemodel(props) {
 
@@ -32,10 +31,13 @@ export default function Imagemodel(props) {
 
 
   return (
-    <div className='modeldiv'>
+    <div className='imagemodal'> 
+      <i className='cancel' onClick={()=>props.setimagemodel(false)}>&#x2715;</i>
+    <div className='modeldiv imagemodal'>
       <Left className='arrows'/>
       <img src={props.images[props.currindex].urls.small} alt="loading" className='foreachimage'/>
       <Right className='arrows'/>
+    </div>
     </div>
   );
 }

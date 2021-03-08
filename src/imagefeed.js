@@ -1,8 +1,8 @@
 import {useState,useEffect} from 'react'
 import axios from 'axios';
-import './image.css'
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Imagemodel from './imagemodel/imagemodel'
+import Imagemodel from './imagemodel'
+import './index.css'
 export default function Imagefeed(){
     const [images, setimages] = useState([])
     const [loadedimg, loadimg] = useState(false)
@@ -10,16 +10,26 @@ export default function Imagefeed(){
     const [myimagemodel, setimagemodel] = useState(false);
 
     const Eachimageelement = ({ url, key, index }) => (
-        <div className="image-item" key={key} >
+        <div key={key} >
           <img src={url} alt='loading' onClick={() => {
-                                console.log(index,images[index])
                                 setindex(index);
                                 setimagemodel(true);
                               }}/>
         </div>
       );
-
-    const fetchImages = (count = 50) => {
+    const Imagemodal = ()=>{
+      return (
+        myimagemodel ?
+        <Imagemodel
+                  images={images}
+                  currindex={currindex}
+                  setindex={setindex}
+                  setimagemodel = {setimagemodel}
+                />
+                : ''
+      )
+    }
+    const fetchImages = (count = 20) => {
         const accessKey = "cmfpyaj9BFVWFUvsBms_qigNhLGI0LCSCmkEVVQy680";
     
         axios
@@ -34,20 +44,14 @@ export default function Imagefeed(){
         console.log(images)
     },[])
     return (
+          <div className='feed'>
             <InfiniteScroll
             dataLength={images}
             next={() => fetchImages(5)}
             hasMore={true}
             >
-              {myimagemodel ? (
-                <Imagemodel
-                  images={images}
-                  currindex={currindex}
-                  setindex={setindex}
-                />
-        ) : 
-              ( <div>
-                  <div className='container'>
+              <Imagemodal className="imagemodal"/> 
+               <div className="grid">
                     {loadedimg ? images.map((image, index) => (
                             <Eachimageelement
                               url={image.urls.thumb}
@@ -56,9 +60,9 @@ export default function Imagefeed(){
                               
                             />
                           )) : ''}
-                  </div>
-              </div> )
-              }
+              </div> 
+              
             </InfiniteScroll>
+            </div>
     )
 }
