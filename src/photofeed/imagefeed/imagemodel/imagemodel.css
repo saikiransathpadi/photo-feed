@@ -1,0 +1,18 @@
+.cls {
+    width: 100px;
+    cursor: pointer;
+  }
+  .right {
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+  .foreachimage{
+    width: 30%;
+    
+  }
+  .modeldiv{
+    margin-left: 35%;
+  }
+  .arrows{
+    position: fixed;
+  }
