@@ -10,8 +10,8 @@ export default function Imagefeed(){
     const [myimagemodel, setimagemodel] = useState(false);
 
     const Eachimageelement = ({ url, key, index }) => (
-        <div key={key} >
-          <img src={url} alt='loading' onClick={() => {
+        <div key={key} className='eachimage' >
+          <img className='eachimage' src={url} alt='loading' onClick={() => {
                                 setindex(index);
                                 setimagemodel(true);
                               }}/>
@@ -47,7 +47,7 @@ export default function Imagefeed(){
           <div className='feed'>
             <InfiniteScroll
             dataLength={images}
-            next={() => fetchImages(5)}
+            next={() => setTimeout(fetchImages(5),10000)}
             hasMore={true}
             >
               <Imagemodal className="imagemodal"/> 

@@ -16,31 +16,65 @@ body{
   
 }
 
+.eachimage:hover{
+  border-radius: 5px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
 .imagemodal{
-  z-index: 10;
-  position: relative;
+  background-color: gray;
+  position: fixed;
+  left: 33%;
+  height: 70%;
+  width: 700px;
+  z-index: 1;
+
 }
 
 .cancel{
-  position: relative;
-  left: 63%;
+  position: fixed;
+  left: 70%;
+  top: 30%;
   color: black;
   cursor: pointer;
+  z-index: 3;
 }
 .cls {
-  width: 100px;
+  width: 10%;
   cursor: pointer;
 }
 .right {
   transform: rotate(180deg);
   cursor: pointer;
+  position: relative;
+  left: 40%;
+  top: 230px;
 }
+.left{
+  position: relative;
+  right: 15%;
+  top: 300px;
+}
+/* .right1{
+  position: relative;
+  top: px;
+}
+.left1{
+  position: relative;
+  top: 50%;
+} */
+/* .rightarrow{
+  position: fixed;
+} */
 .foreachimage{
-  width: 30%;
-  
+  width: 35%;
+  position: relative;
+  bottom: 40px;
 }
 .modeldiv{
-  margin-left: 35%;
+  position: relative;
+  left: 33%;
 }
 .arrows{
   position: fixed;
