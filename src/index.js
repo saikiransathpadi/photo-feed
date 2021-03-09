@@ -7,7 +7,7 @@ import Imagefeed from './imagefeed'
 ReactDOM.render(
   <React.StrictMode>
     
-      <body>
+    <body>
     <h1 className='head'>Photo Book</h1>
    <Imagefeed/>
    </body>
