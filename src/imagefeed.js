@@ -30,7 +30,7 @@ export default function Imagefeed(){
       )
     }
     const fetchImages = (count = 20) => {
-        const accessKey = "cmfpyaj9BFVWFUvsBms_qigNhLGI0LCSCmkEVVQy680";
+        const accessKey = "6lw_er5SLMrXlcDbJVfGg1d_zxLKqgdfYYfkSljUNpA";
     
         axios
           .get(`https://api.unsplash.com/photos/random?client_id=${accessKey}&count=${count}`)
